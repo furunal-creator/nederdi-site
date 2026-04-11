@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="./favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+<title>Ne Derdi? — Tarihin Büyük Düşünürleri Günümüzü Yorumluyor</title>
+<meta name="description" content="Tarihin büyük düşünürleri bugün yaşasaydı, günümüz olayları hakkında ne derdi? Filozofların gözünden güncel haberler.">
+<meta property="og:title" content="Ne Derdi? — Felsefi Haber Yorumu">
+<meta property="og:description" content="Tarihin büyük düşünürleri bugün yaşasaydı, günümüz olayları hakkında ne derdi?">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.nederdi.com">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:site_name" content="Ne Derdi?">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ne Derdi? — Felsefi Haber Yorumu">
+<meta name="twitter:description" content="Tarihin büyük düşünürleri bugün yaşasaydı, günümüz olayları hakkında ne derdi?">
+<link rel="canonical" href="https://www.nederdi.com/">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+
+<!-- Fonts: Cormorant (display) + Satoshi (body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="./base.css">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <!-- Skip to content -->
+  <a href="#main" class="sr-only" style="position:absolute;top:0;left:0;padding:var(--space-2) var(--space-4);background:var(--color-primary);color:var(--color-text-inverse);z-index:999;">Ana içeriğe geç</a>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#/" class="header__logo" aria-label="Ne Derdi? Ana Sayfa">
+        <svg class="header__logo-svg" width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <!-- Outer circle: thinker's head silhouette abstracted -->
+          <circle cx="18" cy="18" r="16" stroke="var(--color-primary)" stroke-width="1.2" fill="none" opacity="0.25"/>
+          <!-- Inner thought circle -->
+          <circle cx="18" cy="18" r="11.5" stroke="var(--color-primary)" stroke-width="1.5" fill="none"/>
+          <!-- Stylized question mark -->
+          <path d="M14.8 14.2c0-2.8 2.4-4.6 4.8-3.8 1.8 0.6 2.8 2.4 2.2 4.2-0.4 1.2-1.4 2-2.4 2.6-0.6 0.4-1 1-1 1.8v1" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <!-- Question dot -->
+          <circle cx="18.4" cy="24.5" r="1.2" fill="var(--color-primary)"/>
+          <!-- Thought bubble dots -->
+          <circle cx="28" cy="27" r="1.5" fill="var(--color-primary)" opacity="0.35"/>
+          <circle cx="31" cy="30" r="1" fill="var(--color-primary)" opacity="0.25"/>
+        </svg>
+        <span class="header__logo-text">Ne Derdi?</span>
+      </a>
+
+      <button class="header__mobile-menu" id="mobile-menu-btn" aria-label="Menüyü aç">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 12h18M3 6h18M3 18h18"/>
+        </svg>
+      </button>
+
+      <nav class="header__nav" id="main-nav">
+        <a href="#/" class="header__nav-link" data-nav="haberler">Haberler</a>
+        <a href="#/filozoflar" class="header__nav-link" data-nav="filozoflar">Filozoflar</a>
+        <a href="#/psikologlar" class="header__nav-link" data-nav="psikologlar">Psikologlar</a>
+        <a href="#/tarihciler" class="header__nav-link" data-nav="tarihciler">Tarihçiler</a>
+        <button class="header__lang-toggle" id="lang-toggle" aria-label="Dili değiştir">
+          <span class="lang-toggle__option lang-toggle__option--active" data-lang="tr">TR</span>
+          <span class="lang-toggle__divider">/</span>
+          <span class="lang-toggle__option" data-lang="en">EN</span>
+        </button>
+        <button class="header__theme-toggle" data-theme-toggle aria-label="Karanlık moda geç">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main id="main">
+    <!-- Pages rendered here by JS -->
+  </main>
+
+  <!-- Interpretation Modal -->
+  <div class="modal-overlay" id="interpretation-modal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-philosopher-name">
+      <div class="modal__header">
+        <img class="modal__philosopher-img" id="modal-img" src="" alt="">
+        <div class="modal__philosopher-info">
+          <h3 class="modal__philosopher-name" id="modal-philosopher-name"></h3>
+          <p class="modal__philosopher-years" id="modal-years"></p>
+          <p class="modal__philosopher-tradition" id="modal-tradition"></p>
+        </div>
+        <button class="modal__close" id="modal-close" aria-label="Kapat">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6L6 18M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <div class="modal__news-context" id="modal-news-context">
+        <strong id="modal-news-title"></strong>
+      </div>
+      <div class="modal__body" id="modal-body">
+        <!-- Interpretation or loading state -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Philosopher Detail Modal -->
+  <div class="modal-overlay" id="philosopher-modal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="phil-modal-name">
+      <div class="modal__header">
+        <img class="modal__philosopher-img" id="phil-modal-img" src="" alt="">
+        <div class="modal__philosopher-info">
+          <h3 class="modal__philosopher-name" id="phil-modal-name"></h3>
+          <p class="modal__philosopher-years" id="phil-modal-years"></p>
+          <p class="modal__philosopher-tradition" id="phil-modal-tradition"></p>
+        </div>
+        <button class="modal__close" id="phil-modal-close" aria-label="Kapat">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6L6 18M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <div class="philosopher-detail" id="phil-modal-detail">
+        <!-- Concepts and framework -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Psychologist Detail Modal -->
+  <div class="modal-overlay" id="psychologist-modal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="psych-modal-name">
+      <div class="modal__header">
+        <img class="modal__philosopher-img" id="psych-modal-img" src="" alt="">
+        <div class="modal__philosopher-info">
+          <h3 class="modal__philosopher-name" id="psych-modal-name"></h3>
+          <p class="modal__philosopher-years" id="psych-modal-years"></p>
+          <p class="modal__philosopher-tradition" id="psych-modal-tradition"></p>
+        </div>
+        <button class="modal__close" id="psych-modal-close" aria-label="Kapat">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6L6 18M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <div class="philosopher-detail" id="psych-modal-detail">
+        <!-- Concepts and framework -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Historian Detail Modal -->
+  <div class="modal-overlay" id="historian-modal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="hist-modal-name">
+      <div class="modal__header">
+        <img class="modal__philosopher-img" id="hist-modal-img" src="" alt="">
+        <div class="modal__philosopher-info">
+          <h3 class="modal__philosopher-name" id="hist-modal-name"></h3>
+          <p class="modal__philosopher-years" id="hist-modal-years"></p>
+          <p class="modal__philosopher-tradition" id="hist-modal-tradition"></p>
+        </div>
+        <button class="modal__close" id="hist-modal-close" aria-label="Kapat">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6L6 18M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <div class="philosopher-detail" id="hist-modal-detail">
+        <!-- Concepts and framework -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__row">
+      <span class="footer__signature">by FU</span>
+    </div>
+    <div class="container footer__disclaimer">
+      <p id="footer-disclaimer"></p>
+    </div>
+  </footer>
+
+  <!-- Configure API: replace URL after creating the Worker -->
+<script>window.NEDERDI_API_BASE = "https://nederdi-api.birgundeogren.workers.dev";</script>
+<script src="./app.js"></script>
+</body>
+</html>

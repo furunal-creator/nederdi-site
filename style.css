@@ -1,0 +1,1225 @@
+/* style.css — Ne Derdi? Design Tokens + Components */
+
+/* ─── Type Scale ─────────────────────────────────────────── */
+:root {
+  --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
+  --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
+  --text-base: clamp(1rem,     0.9rem  + 0.5vw,  1.125rem);
+  --text-lg:   clamp(1.125rem, 0.95rem + 0.85vw, 1.5rem);
+  --text-xl:   clamp(1.5rem,   1rem    + 1.5vw,  2.25rem);
+  --text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.5rem);
+  --text-3xl:  clamp(2.5rem,   1rem    + 4vw,    5rem);
+  --text-hero: clamp(3rem,     0.5rem  + 7vw,    8rem);
+}
+
+/* ─── Spacing ────────────────────────────────────────────── */
+:root {
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+}
+
+/* ─── Fonts ──────────────────────────────────────────────── */
+:root {
+  --font-display: 'Cormorant', 'Georgia', serif;
+  --font-body: 'Satoshi', 'Inter', 'Helvetica Neue', sans-serif;
+}
+
+/* ─── Radius & Transitions ───────────────────────────────── */
+:root {
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+  --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  --content-narrow: 640px;
+  --content-default: 960px;
+  --content-wide: 1200px;
+}
+
+/* ─── Light Mode (Custom Palette) ────────────────────────── */
+:root, [data-theme="light"] {
+  --color-bg:             #faf8f4;
+  --color-surface:        #f5f2ec;
+  --color-surface-2:      #efeae2;
+  --color-surface-offset: #e8e3da;
+  --color-divider:        #d8d2c8;
+  --color-border:         #cec7bb;
+
+  --color-text:           #2c2418;
+  --color-text-muted:     #8a8478;
+  --color-text-faint:     #b5afa5;
+  --color-text-inverse:   #faf8f4;
+
+  --color-primary:        #6b1d2a;
+  --color-primary-hover:  #521622;
+  --color-primary-active: #3d101a;
+  --color-primary-highlight: #f0dfe2;
+
+  --color-secondary:      #1a2744;
+  --color-secondary-hover:#132038;
+  --color-secondary-active:#0e182c;
+
+  --color-category-teknoloji: #2d6a4f;
+  --color-category-siyaset:   #6b1d2a;
+  --color-category-ekonomi:   #b87514;
+  --color-category-dunya:     #1a2744;
+  --color-category-bilim:     #4a4080;
+  --color-category-savas:     #b03020;
+  --color-category-cevre:     #2d6a4f;
+  --color-category-reklam:    #8b6914;
+  --color-category-saglik:    #2d6a4f;
+  --color-category-toplum:    #6b1d2a;
+  --color-category-magazin:   #b0348a;
+
+  --shadow-sm: 0 1px 2px oklch(0.2 0.02 60 / 0.06);
+  --shadow-md: 0 4px 12px oklch(0.2 0.02 60 / 0.08);
+  --shadow-lg: 0 12px 32px oklch(0.2 0.02 60 / 0.12);
+}
+
+/* ─── Dark Mode ──────────────────────────────────────────── */
+[data-theme="dark"] {
+  --color-bg:             #1a1814;
+  --color-surface:        #221f1a;
+  --color-surface-2:      #2a2620;
+  --color-surface-offset: #1e1c18;
+  --color-divider:        #3d3930;
+  --color-border:         #4a453b;
+
+  --color-text:           #e2dcd2;
+  --color-text-muted:     #9e978c;
+  --color-text-faint:     #6a645c;
+  --color-text-inverse:   #1a1814;
+
+  --color-primary:        #d4798a;
+  --color-primary-hover:  #e08d9d;
+  --color-primary-active: #e8a5b2;
+  --color-primary-highlight: #3a2a2e;
+
+  --color-secondary:      #7b9cd4;
+  --color-secondary-hover:#9ab4de;
+  --color-secondary-active:#b4c8e6;
+
+  --color-category-teknoloji: #6aba95;
+  --color-category-siyaset:   #d4798a;
+  --color-category-ekonomi:   #deb45a;
+  --color-category-dunya:     #7b9cd4;
+  --color-category-bilim:     #9a8ed0;
+  --color-category-savas:     #e07860;
+  --color-category-cevre:     #6aba95;
+  --color-category-reklam:    #deb45a;
+  --color-category-saglik:    #6aba95;
+  --color-category-toplum:    #d4798a;
+  --color-category-magazin:   #e070b8;
+
+  --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.2);
+  --shadow-md: 0 4px 12px oklch(0 0 0 / 0.3);
+  --shadow-lg: 0 12px 32px oklch(0 0 0 / 0.4);
+}
+
+/* Dark mode philosopher photo visibility */
+[data-theme="dark"] .philosopher-thumb__img,
+[data-theme="dark"] .philosopher-card__img,
+[data-theme="dark"] .modal__philosopher-img {
+  border-color: #5a554a;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.06), 0 2px 8px rgba(0,0,0,0.3);
+  background: #3d3930;
+}
+
+[data-theme="dark"] .philosopher-thumb:hover .philosopher-thumb__img {
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 24px color-mix(in srgb, var(--color-primary) 40%, transparent),
+              0 0 0 3px color-mix(in srgb, var(--color-primary) 25%, transparent);
+  filter: saturate(1.2) brightness(1.15) contrast(1.05);
+}
+
+[data-theme="dark"] .philosopher-card:hover .philosopher-card__img {
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 20px color-mix(in srgb, var(--color-primary) 30%, transparent);
+  filter: saturate(1.15) brightness(1.1) contrast(1.05);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --color-bg:             #1a1814;
+    --color-surface:        #221f1a;
+    --color-surface-2:      #2a2620;
+    --color-surface-offset: #1e1c18;
+    --color-divider:        #3d3930;
+    --color-border:         #4a453b;
+    --color-text:           #e2dcd2;
+    --color-text-muted:     #9e978c;
+    --color-text-faint:     #6a645c;
+    --color-text-inverse:   #1a1814;
+    --color-primary:        #d4798a;
+    --color-primary-hover:  #e08d9d;
+    --color-primary-active: #e8a5b2;
+    --color-primary-highlight: #3a2a2e;
+    --color-secondary:      #7b9cd4;
+    --color-secondary-hover:#9ab4de;
+    --color-secondary-active:#b4c8e6;
+    --color-category-teknoloji: #6aba95;
+    --color-category-siyaset:   #d4798a;
+    --color-category-ekonomi:   #deb45a;
+    --color-category-dunya:     #7b9cd4;
+    --color-category-bilim:     #9a8ed0;
+    --color-category-savas:     #e07860;
+    --color-category-cevre:     #6aba95;
+    --color-category-magazin:   #e070b8;
+    --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.2);
+    --shadow-md: 0 4px 12px oklch(0 0 0 / 0.3);
+    --shadow-lg: 0 12px 32px oklch(0 0 0 / 0.4);
+  }
+
+  :root:not([data-theme]) .philosopher-thumb__img,
+  :root:not([data-theme]) .philosopher-card__img,
+  :root:not([data-theme]) .modal__philosopher-img {
+    border-color: #5a554a;
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.06), 0 2px 8px rgba(0,0,0,0.3);
+    background: #3d3930;
+  }
+}
+
+/* ─── Layout ─────────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--content-wide);
+  margin-inline: auto;
+  padding-inline: var(--space-5);
+}
+
+.container--narrow {
+  max-width: var(--content-default);
+}
+
+/* ─── Header ─────────────────────────────────────────────── */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: color-mix(in srgb, var(--color-bg) 88%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-border) 40%, transparent);
+  transition: box-shadow var(--transition-interactive);
+}
+
+.header--scrolled {
+  box-shadow: var(--shadow-sm);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 3.5rem;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.header__logo-svg {
+  flex-shrink: 0;
+  transition: transform var(--transition-interactive);
+}
+
+.header__logo:hover .header__logo-svg {
+  transform: scale(1.08);
+}
+
+.header__logo-text {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-primary);
+}
+
+.header__logo-mark {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.header__nav-link {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--transition-interactive);
+  position: relative;
+}
+
+.header__nav-link:hover,
+.header__nav-link--active {
+  color: var(--color-text);
+}
+
+.header__nav-link--active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: var(--color-primary);
+  border-radius: var(--radius-full);
+}
+
+/* ─── Language Toggle ────────────────────────────────────── */
+.header__lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-full);
+  background: var(--color-surface);
+  border: 1px solid var(--color-divider);
+  cursor: pointer;
+  transition: border-color var(--transition-interactive);
+  font-family: var(--font-body);
+}
+
+.header__lang-toggle:hover {
+  border-color: var(--color-primary);
+}
+
+.lang-toggle__option {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--color-text-faint);
+  transition: color var(--transition-interactive);
+  padding: 0.1rem 0.2rem;
+  border-radius: var(--radius-sm);
+}
+
+.lang-toggle__option--active {
+  color: var(--color-primary);
+  background: var(--color-primary-highlight);
+}
+
+.lang-toggle__divider {
+  font-size: 0.65rem;
+  color: var(--color-divider);
+  user-select: none;
+}
+
+.header__theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: var(--radius-full);
+  color: var(--color-text-muted);
+  transition: color var(--transition-interactive), background var(--transition-interactive);
+}
+
+.header__theme-toggle:hover {
+  color: var(--color-text);
+  background: var(--color-surface);
+}
+
+/* ─── Hero ───────────────────────────────────────────────── */
+.hero {
+  padding-block: clamp(var(--space-6), 4vw, var(--space-10));
+  text-align: center;
+}
+
+.hero__logo-mark {
+  display: block;
+  margin: 0 auto var(--space-4);
+  opacity: 0.85;
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-4);
+  font-style: italic;
+}
+
+.hero__tagline {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  max-width: 48ch;
+  margin-inline: auto;
+  line-height: 1.7;
+}
+
+.hero__divider {
+  width: 4rem;
+  height: 1px;
+  background: var(--color-primary);
+  opacity: 0.4;
+  margin: var(--space-6) auto 0;
+}
+
+/* ─── News Feed ──────────────────────────────────────────── */
+.news-feed {
+  padding-bottom: clamp(var(--space-12), 8vw, var(--space-24));
+}
+
+.news-feed__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+/* ─── News Card ──────────────────────────────────────────── */
+.news-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
+  transition: box-shadow var(--transition-interactive), border-color var(--transition-interactive);
+}
+
+.news-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-border);
+}
+
+.news-card__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.news-card__category {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  background: var(--color-primary-highlight);
+  color: var(--color-primary);
+}
+
+.news-card__category[data-cat="Teknoloji"] { color: var(--color-category-teknoloji); background: color-mix(in srgb, var(--color-category-teknoloji) 10%, var(--color-bg)); }
+.news-card__category[data-cat="Siyaset"]   { color: var(--color-category-siyaset);   background: color-mix(in srgb, var(--color-category-siyaset)   10%, var(--color-bg)); }
+.news-card__category[data-cat="Ekonomi"]   { color: var(--color-category-ekonomi);   background: color-mix(in srgb, var(--color-category-ekonomi)   10%, var(--color-bg)); }
+.news-card__category[data-cat="Dünya"]     { color: var(--color-category-dunya);     background: color-mix(in srgb, var(--color-category-dunya)     10%, var(--color-bg)); }
+.news-card__category[data-cat="Bilim"]     { color: var(--color-category-bilim);     background: color-mix(in srgb, var(--color-category-bilim)     10%, var(--color-bg)); }
+.news-card__category[data-cat="Savaş"]     { color: var(--color-category-savas);     background: color-mix(in srgb, var(--color-category-savas)     10%, var(--color-bg)); }
+.news-card__category[data-cat="Çevre"]     { color: var(--color-category-cevre);     background: color-mix(in srgb, var(--color-category-cevre)     10%, var(--color-bg)); }
+.news-card__category[data-cat="Magazin"]   { color: var(--color-category-magazin);   background: color-mix(in srgb, var(--color-category-magazin)   10%, var(--color-bg)); }
+
+.news-card__date {
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+}
+
+.news-card__source {
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+}
+
+.news-card__source a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--transition-interactive);
+}
+
+.news-card__source a:hover {
+  color: var(--color-primary);
+}
+
+.news-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+  line-height: 1.25;
+}
+
+.news-card__summary {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  margin-bottom: var(--space-5);
+}
+
+/* ─── Featured Quote Preview ─────────────────────────── */
+.news-card__featured-quote {
+  background: var(--color-surface-2);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-5);
+  border-left: 3px solid var(--color-primary);
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.featured-quote__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.featured-quote__img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  border: 2px solid var(--color-primary);
+  flex-shrink: 0;
+}
+
+.featured-quote__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.featured-quote__name {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+.featured-quote__label {
+  font-size: var(--text-xs);
+  color: var(--color-primary);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.featured-quote__body {
+  min-height: 2.5rem;
+  width: 100%;
+}
+
+.featured-quote__text {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-style: italic;
+  line-height: 1.65;
+  color: var(--color-text);
+  opacity: 0.9;
+  display: block;
+  width: 100%;
+}
+
+.featured-quote__text--error {
+  color: var(--color-text-faint);
+  font-style: normal;
+}
+
+/* Skeleton loading animation */
+.featured-quote__skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.skeleton-line {
+  height: 0.75rem;
+  background: linear-gradient(90deg,
+    var(--color-surface-offset) 25%,
+    var(--color-divider) 50%,
+    var(--color-surface-offset) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  border-radius: var(--radius-sm);
+  width: 100%;
+}
+
+.skeleton-line--short {
+  width: 65%;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.news-card__divider {
+  height: 1px;
+  background: var(--color-divider);
+  margin-bottom: var(--space-4);
+}
+
+.news-card__philosophers-label {
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  margin-bottom: var(--space-3);
+}
+
+.news-card__philosophers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  justify-content: flex-start;
+}
+
+.news-card__philosophers::-webkit-scrollbar {
+  height: 4px;
+}
+
+.news-card__philosophers::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.news-card__philosophers::-webkit-scrollbar-thumb {
+  background: var(--color-divider);
+  border-radius: var(--radius-full);
+}
+
+/* ─── Philosopher Thumbnail ──────────────────────────────── */
+.philosopher-thumb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  cursor: pointer;
+  width: 4.2rem;
+  position: relative;
+}
+
+.philosopher-thumb:active {
+  transform: scale(0.97);
+}
+
+.philosopher-thumb__img {
+  width: 3rem;
+  height: 3rem;
+  min-width: 3rem;
+  min-height: 3rem;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  border: 2px solid var(--color-divider);
+  transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 280ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 280ms cubic-bezier(0.16, 1, 0.3, 1),
+              filter 280ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.philosopher-thumb:hover .philosopher-thumb__img {
+  transform: scale(1.35);
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 20px color-mix(in srgb, var(--color-primary) 35%, transparent),
+              0 0 0 3px color-mix(in srgb, var(--color-primary) 18%, transparent);
+  z-index: 10;
+  position: relative;
+  filter: saturate(1.15) contrast(1.05);
+}
+
+.philosopher-thumb:hover .philosopher-thumb__name {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.philosopher-thumb__name {
+  font-size: 0.58rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  line-height: 1.15;
+  width: 100%;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  transition: color var(--transition-interactive), font-weight var(--transition-interactive);
+}
+
+/* ─── Interpretation Modal ───────────────────────────────── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: oklch(0.1 0.01 60 / 0.65);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 300ms cubic-bezier(0.16, 1, 0.3, 1), visibility 300ms;
+}
+
+.modal-overlay--open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  max-width: 580px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(16px) scale(0.97);
+  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-overlay--open .modal {
+  transform: translateY(0) scale(1);
+}
+
+.modal__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-6);
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.modal__philosopher-img {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  border: 3px solid var(--color-primary-highlight);
+  flex-shrink: 0;
+}
+
+.modal__philosopher-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.modal__philosopher-name {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+.modal__philosopher-years {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+}
+
+.modal__philosopher-tradition {
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  font-style: italic;
+}
+
+.modal__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--radius-full);
+  color: var(--color-text-muted);
+  transition: color var(--transition-interactive), background var(--transition-interactive);
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+.modal__close:hover {
+  color: var(--color-text);
+  background: var(--color-surface-offset);
+}
+
+.modal__news-context {
+  padding: var(--space-4) var(--space-6);
+  background: var(--color-surface-offset, var(--color-surface-2));
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.modal__news-context strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.modal__body {
+  padding: var(--space-6);
+}
+
+.modal__interpretation {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--color-text);
+  font-style: italic;
+}
+
+.modal__interpretation::before {
+  content: '\201C';
+  font-size: 1.5em;
+  color: var(--color-primary);
+  font-family: var(--font-display);
+  opacity: 0.5;
+  margin-right: 2px;
+}
+
+/* Loading state */
+.modal__loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-8) var(--space-6);
+}
+
+.modal__loading-spinner {
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid var(--color-divider);
+  border-top-color: var(--color-primary);
+  border-radius: var(--radius-full);
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.modal__loading-text {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+/* ─── Philosophers Page ──────────────────────────────────── */
+.philosophers-page {
+  padding-block: clamp(var(--space-8), 6vw, var(--space-16));
+}
+
+.philosophers-page__title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  color: var(--color-text);
+  text-align: center;
+  margin-bottom: var(--space-2);
+}
+
+.philosophers-page__subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-align: center;
+  margin-bottom: var(--space-10);
+  max-width: 50ch;
+  margin-inline: auto;
+}
+
+.philosophers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  gap: var(--space-5);
+}
+
+.philosopher-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  border: 1px solid color-mix(in srgb, var(--color-border) 40%, transparent);
+  text-align: center;
+  cursor: pointer;
+  transition: box-shadow var(--transition-interactive), border-color var(--transition-interactive), transform var(--transition-interactive);
+}
+
+.philosopher-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.philosopher-card:active {
+  transform: translateY(0);
+}
+
+.philosopher-card__img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  margin: 0 auto var(--space-3);
+  border: 3px solid var(--color-divider);
+  transition: border-color 280ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 280ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 280ms cubic-bezier(0.16, 1, 0.3, 1),
+              filter 280ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.philosopher-card:hover .philosopher-card__img {
+  border-color: var(--color-primary);
+  transform: scale(1.15);
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--color-primary) 25%, transparent);
+  filter: saturate(1.1) contrast(1.05);
+}
+
+.philosopher-card__name {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-1);
+}
+
+.philosopher-card__years {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+}
+
+.philosopher-card__tradition {
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  font-style: italic;
+  line-height: 1.4;
+}
+
+/* ─── Philosopher Detail Modal ───────────────────────────── */
+.philosopher-detail {
+  padding: var(--space-6);
+}
+
+.philosopher-detail__concepts-title {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-faint);
+  margin-bottom: var(--space-2);
+}
+
+.philosopher-detail__concepts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.philosopher-detail__concept-tag {
+  font-size: var(--text-xs);
+  padding: var(--space-1) var(--space-3);
+  background: var(--color-primary-highlight);
+  color: var(--color-primary);
+  border-radius: var(--radius-full);
+  font-weight: 500;
+}
+
+.philosopher-detail__framework-title {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-faint);
+  margin-bottom: var(--space-2);
+}
+
+.philosopher-detail__framework {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  font-style: italic;
+}
+
+/* ─── Footer ─────────────────────────────────────────────── */
+.footer {
+  border-top: 1px solid var(--color-divider);
+  padding-block: var(--space-8);
+  text-align: center;
+}
+
+.footer__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer__signature {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  opacity: 0.55;
+  flex-shrink: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.footer__text {
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+}
+
+.footer__link {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--transition-interactive);
+}
+
+.footer__link:hover {
+  color: var(--color-primary);
+}
+
+.footer__disclaimer {
+  text-align: center;
+  padding-top: var(--space-4);
+}
+
+.footer__disclaimer p {
+  font-size: 0.7rem;
+  line-height: 1.5;
+  color: var(--color-text-faint);
+  opacity: 0.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ─── Page transitions ───────────────────────────────────── */
+.page-view {
+  animation: fadeIn 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ─── Scrollbar styling ──────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-divider);
+  border-radius: var(--radius-full);
+}
+
+/* ─── Mobile nav ─────────────────────────────────────────── */
+.header__mobile-menu {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  color: var(--color-text);
+}
+
+@media (max-width: 640px) {
+  .header__nav {
+    position: fixed;
+    top: 3.5rem;
+    left: 0;
+    right: 0;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    flex-direction: column;
+    padding: var(--space-4);
+    gap: var(--space-4);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), opacity 300ms, visibility 300ms;
+    z-index: 99;
+  }
+
+  .header__nav--open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .header__mobile-menu {
+    display: flex;
+  }
+
+  .news-card__philosophers {
+    gap: var(--space-3);
+  }
+
+  .philosopher-thumb__img {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .philosopher-thumb {
+    width: 3.5rem;
+  }
+
+  .philosopher-thumb__name {
+    font-size: 0.5rem;
+  }
+
+  .news-card__philosophers {
+    gap: 0.5rem;
+  }
+
+  .philosopher-thumb:hover .philosopher-thumb__img {
+    transform: scale(1.25);
+  }
+
+  .philosophers-grid {
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+    gap: var(--space-3);
+  }
+
+  .modal {
+    max-height: 90vh;
+    margin: var(--space-2);
+  }
+
+  .hero__title {
+    font-size: var(--text-2xl);
+  }
+}
+
+/* ─── Ad/Reklam card styling ─────────────────────────────── */
+.news-card--ad {
+  border: 1.5px solid var(--color-category-reklam);
+  background: linear-gradient(135deg, var(--color-surface) 0%, color-mix(in srgb, var(--color-category-reklam) 6%, var(--color-surface)) 100%);
+  position: relative;
+}
+
+.news-card--ad .news-card__ad-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-category-reklam);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-2);
+}
+
+.news-card--ad .news-card__ad-badge svg {
+  flex-shrink: 0;
+}
+
+.news-card--ad .news-card__category[data-cat="Reklam"] {
+  background: color-mix(in srgb, var(--color-category-reklam) 15%, transparent);
+  color: var(--color-category-reklam);
+}
+
+[data-theme="dark"] .news-card--ad {
+  border-color: color-mix(in srgb, var(--color-category-reklam) 50%, transparent);
+  background: linear-gradient(135deg, var(--color-surface) 0%, color-mix(in srgb, var(--color-category-reklam) 8%, var(--color-surface)) 100%);
+}
+
+/* ─── Error state ────────────────────────────────────────── */
+.error-state {
+  text-align: center;
+  padding: var(--space-8);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+/* ─── WhatsApp Share Button ──────────────────────────────── */
+.news-card {
+  position: relative;
+}
+
+.news-card__share-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #25D366;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+  z-index: 2;
+  text-decoration: none;
+}
+
+.news-card__share-btn:hover {
+  opacity: 1;
+}
+
+/* ─── Psychologist Featured Quote ────────────────────────── */
+.news-card__featured-quote--psych {
+  border-left-color: #4a4080;
+}
+
+[data-theme="dark"] .news-card__featured-quote--psych {
+  border-left-color: #9a8ed0;
+}
+
+/* ─── Psychologist Thumb (reuse philosopher-thumb) ───────── */
+.psychologist-thumb {
+  /* Inherits from philosopher-thumb */
+}
+
+/* Dark mode psychologist photo visibility */
+[data-theme="dark"] .psychologist-thumb .philosopher-thumb__img,
+[data-theme="dark"] .psychologist-card .philosopher-card__img {
+  border-color: #5a554a;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.06), 0 2px 8px rgba(0,0,0,0.3);
+  background: #3d3930;
+}
+
+/* ─── Historian Featured Quote ──────────────────────────── */
+.news-card__featured-quote--hist {
+  border-left-color: #5a6e3a;
+}
+
+[data-theme="dark"] .news-card__featured-quote--hist {
+  border-left-color: #a0b878;
+}
+
+/* ─── Historian Thumb (reuse philosopher-thumb) ─────────── */
+.historian-thumb {
+  /* Inherits from philosopher-thumb */
+}
+
+/* Dark mode historian photo visibility */
+[data-theme="dark"] .historian-thumb .philosopher-thumb__img,
+[data-theme="dark"] .historian-card .philosopher-card__img {
+  border-color: #5a554a;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.06), 0 2px 8px rgba(0,0,0,0.3);
+  background: #3d3930;
+}
