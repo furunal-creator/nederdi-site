@@ -778,12 +778,12 @@
   }
 
   function attachNewsCardListeners() {
-    var thumbs = document.querySelectorAll(".philosopher-thumb:not(.psychologist-thumb)");
+    var thumbs = document.querySelectorAll(".philosopher-thumb:not(.psychologist-thumb):not(.historian-thumb)");
     thumbs.forEach(function (thumb) {
       thumb.addEventListener("click", function () {
         var philosopherId = this.getAttribute("data-philosopher-id");
         var newsId = this.getAttribute("data-news-id");
-        openInterpretationModal(newsId, philosopherId);
+        if (philosopherId) openInterpretationModal(newsId, philosopherId);
       });
     });
     var psychThumbs = document.querySelectorAll(".psychologist-thumb");
@@ -791,7 +791,7 @@
       thumb.addEventListener("click", function () {
         var psychologistId = this.getAttribute("data-psychologist-id");
         var newsId = this.getAttribute("data-news-id");
-        openPsychInterpretationModal(newsId, psychologistId);
+        if (psychologistId) openPsychInterpretationModal(newsId, psychologistId);
       });
     });
     var histThumbs = document.querySelectorAll(".historian-thumb");
@@ -799,7 +799,7 @@
       thumb.addEventListener("click", function () {
         var historianId = this.getAttribute("data-historian-id");
         var newsId = this.getAttribute("data-news-id");
-        openHistInterpretationModal(newsId, historianId);
+        if (historianId) openHistInterpretationModal(newsId, historianId);
       });
     });
     /* Share buttons — mobile: whatsapp app, desktop: web.whatsapp */
