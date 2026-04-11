@@ -47,8 +47,26 @@
     cat: { "Savaş": "War", "Ekonomi": "Economy", "Teknoloji": "Technology", "Çevre": "Environment", "Siyaset": "Politics", "Sağlık": "Health", "Bilim": "Science", "Magazin": "Entertainment", "Gündem": "Headlines", "Reklam": "Ad", "Toplum": "Society" },
     months: ["January","February","March","April","May","June","July","August","September","October","November","December"]
   };
-  function t(key) { return (currentLang === "en" ? EN : TR)[key] || key; }
-  function tCat(cat) { return (currentLang === "en" ? EN : TR).cat[cat] || cat; }
+  var ZH = {
+    hero_title: "他们会怎么说？",
+    hero_tagline: "如果历史上最伟大的思想家活在今天，他们会如何评论当下的时事？",
+    nav_news: "新闻", nav_philosophers: "哲学家",
+    ne_derdi: "会怎么说？", ask_others: "问问其他哲学家", sponsored: "赞助",
+    phil_page_title: "哲学家", phil_page_subtitle: "20位伟大的思想家及其世界观",
+    key_concepts: "核心概念", framework: "思想框架",
+    thinking: " 正在思考...", ne_hissederdi: "会有何感受？", ask_other_psychologists: "问问其他心理学家", psych_page_title: "心理学家", psych_page_subtitle: "20位先驱心理学家及其对人类心灵的解读", nav_psychologists: "心理学家", psych_thinking: " 正在分析...", ne_yazardi: "会写什么？", ask_other_historians: "问问其他历史学家", hist_page_title: "历史学家", hist_page_subtitle: "20位先驱历史学家及其历史观", nav_historians: "历史学家", hist_thinking: " 正在研究...", rate_limit: "每小时请求次数已达上限，请稍后再试。",
+    load_fail: "评论加载失败。", api_not_ready: "评论功能即将上线。",
+    api_not_configured: "评论API尚未配置。",
+    rate_limit_modal: "您已达到每小时评论上限，请稍后再试。",
+    load_fail_modal: "评论加载失败，请重试。",
+    toggle_dark: "切换至深色模式", toggle_light: "切换至浅色模式",
+    open_menu: "打开菜单", close_modal: "关闭", skip_content: "跳至主要内容",
+    disclaimer: "本网站上的哲学家、心理学家和历史学家评论均由人工智能根据相关思想家的历史著作和思想体系生成。所有评论均为虚构内容，不代表任何真实人物的观点，对任何个人或机构不具约束力。",
+    cat: { "Savaş": "战争", "Ekonomi": "经济", "Teknoloji": "科技", "Çevre": "环境", "Siyaset": "政治", "Sağlık": "健康", "Bilim": "科学", "Magazin": "娱乐", "Gündem": "要闻", "Reklam": "广告", "Toplum": "社会" },
+    months: ["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"]
+  };
+  function t(key) { return (currentLang === "en" ? EN : currentLang === "zh" ? ZH : TR)[key] || key; }
+  function tCat(cat) { return (currentLang === "en" ? EN : currentLang === "zh" ? ZH : TR).cat[cat] || cat; }
   function pName(p) { return currentLang === "en" ? p.name : p.name_tr; }
 
   /* ─── Embedded Data ────────────────────────────────────── */
@@ -58,8 +76,10 @@
       id: "news-1",
       title: "Trump, İran Enerji Tesislerine Saldırıyı 10 Gün Erteledi: Barış Görüşmeleri Sürüyor",
       title_en: "Trump Delays Iran Energy Strikes by 10 Days: Peace Talks Ongoing",
+      title_zh: "特朗普将对伊朗能源设施的打击推迟10天：和平谈判持续进行",
       summary: "ABD Başkanı Trump, İran'ın enerji altyapısına yönelik askeri operasyonları 6 Nisan'a kadar erteleyerek diplomatik çözüm arayışına süre tanıdı. Pakistan, Türkiye ve Mısır'ın arabuluculuk çabalarıyla ABD-İran arasındaki müzakereler devam ediyor. Trump, Hürmüz Boğazı'nın açılması için yeni bir ültimatom verirken, görüşmelerin 'olumlu ilerlediğini' savundu.",
       summary_en: "President Trump delayed military operations against Iran's energy infrastructure until April 6, giving diplomacy more time. Mediation efforts by Pakistan, Turkey and Egypt continue. Trump set a new ultimatum for reopening the Strait of Hormuz while claiming talks are 'progressing positively.'",
+      summary_zh: "美国总统特朗普将针对伊朗能源基础设施的军事行动推迟至4月6日，为外交斡旋争取时间。巴基斯坦、土耳其和埃及的调解努力仍在继续。特朗普就重新开放霍尔木兹海峡发出新的最后通牒，同时声称谈判'进展积极'。",
       category: "Savaş",
       date: "2026-03-27",
       source_name: "Al Jazeera",
@@ -75,8 +95,10 @@
       id: "news-2",
       title: "G7 Dışişleri Bakanları Fransa'da Toplandı: İran ve Hürmüz Boğazı Gündeme Damgasını Vurdu",
       title_en: "G7 Foreign Ministers Meet in France: Iran and Strait of Hormuz Dominate Agenda",
+      title_zh: "G7外长在法国会晤：伊朗和霍尔木兹海峡主导议程",
       summary: "G7 ülkelerinin dışişleri bakanları Paris yakınlarında iki günlük kritik zirvede bir araya geldi. ABD Dışişleri Bakanı Rubio, müttefiklerden İran savaşına destek istedi. Fransa, müzakere yoluyla çatışma çözümünü ve deniz ticaret yollarının yeniden açılmasını önceliklendirdi. Ukrayna, Gazze ve Sudan da gündemdeki konular arasında yer aldı.",
       summary_en: "G7 foreign ministers gathered near Paris for a two-day critical summit. US Secretary of State Rubio sought allied support for the Iran war. France prioritized conflict resolution through negotiation and reopening maritime trade routes. Ukraine, Gaza and Sudan were also on the agenda.",
+      summary_zh: "G7外长在巴黎附近举行为期两天的关键峰会。美国国务卿鲁比奥寻求盟友对伊朗战争的支持。法国优先考虑通过谈判解决冲突并重新开放海上贸易航线。乌克兰、加沙和苏丹也在议程之列。",
       category: "Siyaset",
       date: "2026-03-27",
       source_name: "NPR",
@@ -92,8 +114,10 @@
       id: "news-3",
       title: "İran Savaşı Küresel Ekonomiyi Sarstı: Borsa Düştü, Petrol 120 Dolara Dayandı",
       title_en: "Iran War Shakes Global Economy: Stocks Fall, Oil Nears $120",
+      title_zh: "伊朗战争撼动全球经济：股市下跌，油价逼近120美元",
       summary: "İran savaşının bir ayına yaklaşmasıyla Dow, NASDAQ ve S&P 500 endeksleri yüzde 5'ten fazla değer kaybetti. ABD'de benzin fiyatları galon başına yaklaşık 1 dolar arttı. Brent petrol 120 dolar seviyesine yaklaştı ve Macquarie, savaş hazirana kadar sürerse petrolün 200 dolara çıkabileceği uyarısında bulundu. Küresel enflasyon endişeleri artıyor.",
       summary_en: "As the Iran war approaches one month, the Dow, NASDAQ and S&P 500 have all fallen over 5%. US gas prices rose by $1 per gallon. Brent crude neared $120, and Macquarie warned oil could hit $200 if the war lasts until June. Global inflation fears are rising.",
+      summary_zh: "随着伊朗战争进入第四周，道琼斯、纳斯达克和标普500指数均下跌超过5%。美国汽油价格每加仑上涨约1美元。布伦特原油逼近120美元，麦格理警告若战争持续至六月，油价可能飙升至200美元。全球通胀担忧加剧。",
       category: "Ekonomi",
       date: "2026-03-27",
       source_name: "TODAY",
@@ -109,8 +133,10 @@
       id: "news-4",
       title: "İsrail, İran Devrim Muhafızları Deniz Kuvvetleri Komutanını Öldürdüğünü Açıkladı",
       title_en: "Israel Says It Killed Iran's Revolutionary Guard Naval Commander",
+      title_zh: "以色列宣布击毙伊朗革命卫队海军司令",
       summary: "İsrail, Hürmüz Boğazı'nın kapatılmasından sorumlu tutulan İran Devrim Muhafızları Deniz Kuvvetleri Komutanı Ali Rıza Tangiri'nin Bender Abbas'ta düzenlenen bir hava saldırısında öldürüldüğünü duyurdu. İsrail ayrıca Tahran'da balistik füze üretim tesislerini ve hava savunma sistemlerini hedef aldı. İsrail Savunma Bakanı, olası ateşkes öncesi 48 saatlik yoğun saldırı emri verildiğini belirtti.",
       summary_en: "Israel announced the killing of Iran's IRGC Naval Commander Ali Reza Tangsiri in an airstrike in Bandar Abbas. He was held responsible for closing the Strait of Hormuz. Israel also targeted ballistic missile production facilities and air defense systems in Tehran. The Defense Minister ordered a 48-hour surge in attacks before a potential ceasefire.",
+      summary_zh: "以色列宣布在阿巴斯港的空袭中击毙了伊朗革命卫队海军司令阿里·雷扎·坦格西里。他被认为是关闭霍尔木兹海峡的责任人。以色列还在德黑兰打击了弹道导弹生产设施和防空系统。国防部长下令在可能的停火前发起48小时密集攻击。",
       category: "Savaş",
       date: "2026-03-27",
       source_name: "The Times of Israel",
@@ -126,8 +152,10 @@
       id: "news-5",
       title: "ABD, Tomahawk Füzelerini Alarma Yol Açan Hızla Tüketiyor",
       title_en: "US Burning Through Tomahawk Missiles at Alarming Rate",
+      title_zh: "美国以惊人速度消耗战斧导弹",
       summary: "ABD ordusu İran savaşında 7.800'den fazla hedefi vurdu ve 120'den fazla İran gemisini imha etti. Ancak Pentagon yetkilileri, Tomahawk seyir füzelerinin tüketim hızının endişe verici boyutlara ulaştığını bildirdi. 8.000'den fazla savaş uçuşu gerçekleştirilirken, cephane stokları üzerindeki baskı artıyor.",
       summary_en: "The US military has struck over 7,800 targets in Iran and destroyed 120+ Iranian vessels. However, Pentagon officials report that the rate of Tomahawk cruise missile consumption has reached alarming levels. With over 8,000 combat flights conducted, pressure on ammunition stockpiles is mounting.",
+      summary_zh: "美军在伊朗战争中打击了超过7800个目标，摧毁了120余艘伊朗舰艇。然而五角大楼官员报告称，战斧巡航导弹的消耗速度已达到令人担忧的水平。在执行超过8000架次作战飞行的同时，弹药库存压力持续增大。",
       category: "Savaş",
       date: "2026-03-27",
       source_name: "CNN",
@@ -143,8 +171,10 @@
       id: "news-6",
       title: "Trump, İran Halkının Sokağa Çıkamadığını İtiraf Etti: Keskin Nişancılar Vuruyor",
       title_en: "Trump Admits Iranian People Are 'Petrified' of Taking to the Streets",
-      summary: "ABD Başkanı Trump, Fox News'a verdiği röportajda İran halkının sokağa çıkamadığını kabul etti. 'Bir tarafın silahları var ve sizi vuruyorlar' dedi. Savaş öncesi rejim değişikliği umutlarından geri adım atan Trump, İran rejiminin dört haftalık savaşa rağmen ayakta kaldığını dolaylı olarak kabul etmiş oldu.",
+      title_zh: "特朗普承认伊朗民众'恐惧'上街抗议",
+      summary: "ABD Başkanı Trump, Fox News'a verdiği röportajda İran halkının sokağa çıkamadığını kabul etti. 'Bir tarafin silahları var ve sizi vuruyorlar' dedi. Savaş öncesi rejim değişikliği umutlarından geri adım atan Trump, İran rejiminin dört haftalık savaşa rağmen ayakta kaldığını dolaylı olarak kabul etmiş oldu.",
       summary_en: "President Trump told Fox News that Iranian people are 'petrified' of protesting. 'One side has guns, and they shoot you,' he said. Stepping back from pre-war hopes of regime change, Trump implicitly acknowledged that the Iranian regime has weathered four weeks of war.",
+      summary_zh: "美国总统特朗普在接受福克斯新闻采访时承认伊朗人民'恐惧'上街。他说：'一方有枪，他们会开枪打你。'从战前的政权更迭希望中退后一步，特朗普间接承认伊朗政权经受住了四周的战争考验。",
       category: "Siyaset",
       date: "2026-03-27",
       source_name: "The Times of Israel",
@@ -160,8 +190,10 @@
       id: "news-7",
       title: "Eski ABD Güvenlik Danışmanı Sullivan: İran Cenevre'de Anlaşma Önerdi, Müzakereciler Anlamadı",
       title_en: "Former US Adviser Sullivan: Iran Made a Proposal in Geneva, Negotiators Didn't Understand It",
+      title_zh: "美前国安顾问沙利文：伊朗在日内瓦提出方案，谈判代表未能理解",
       summary: "Biden dönemi Ulusal Güvenlik Danışmanı Jake Sullivan, savaş öncesi Cenevre'deki son görüşmelerde İran'ın nükleer sorunu büyük ölçüde çözen bir teklif sunduğunu ancak ABD müzakerecilerinin bunu anlayamadığını açıkladı. Sullivan, Witkoff ve Kushner'ın tecrübesiz olduğunu ve askeri harekâta geçmekte acele edildiğini söyledi.",
       summary_en: "Former National Security Adviser Jake Sullivan revealed that Iran presented a proposal in Geneva that 'significantly addressed the nuclear issue' but US negotiators 'did not comprehend what was being offered.' Sullivan said Witkoff and Kushner were inexperienced and rushed to military action.",
+      summary_zh: "前国家安全顾问杰克·沙利文透露，伊朗在日内瓦提出了一项'在很大程度上解决核问题'的方案，但美国谈判代表'未能理解所提供的内容'。沙利文表示维特科夫和库什纳缺乏经验，仓促走向军事行动。",
       category: "Gündem",
       date: "2026-03-27",
       source_name: "The New York Times",
@@ -177,8 +209,10 @@
       id: "news-8",
       title: "Körfez Ülkeleri Saldırı Altında: Kuveyt Limanına Drone, Bahreyn'de Alarm",
       title_en: "Gulf States Under Attack: Drone Hits Kuwait Port, Alarms in Bahrain",
+      title_zh: "海湾国家遭袭：无人机袭击科威特港口，巴林拉响警报",
       summary: "İran Devrim Muhafızları, ABD üslerinin bulunduğu BAE, Bahreyn ve Kuveyt'e füze ve İHA saldırıları düzenledi. Kuveyt limanı İHA saldırısına uğrarken, Bahreyn'de sirenler çaldı ve Katar güvenlik seviyesini yükseltti. Hürmüz Boğazı'ndaki Taylandlı bir kargo gemisi İran'ın Kişm Adası açıklarında karaya oturdu.",
       summary_en: "Iran's Revolutionary Guards launched missile and drone attacks on UAE, Bahrain and Kuwait where US bases are located. Kuwait's port was hit by drones, sirens sounded in Bahrain and Qatar raised its security level. A Thai cargo ship in the Strait of Hormuz ran aground off Iran's Qeshm Island.",
+      summary_zh: "伊朗革命卫队向设有美军基地的阿联酋、巴林和科威特发射导弹和无人机。科威特港口遭无人机袭击，巴林拉响警报，卡塔尔提升安全级别。一艘泰国货轮在霍尔木兹海峡伊朗格什姆岛附近搁浅。",
       category: "Savaş",
       date: "2026-03-27",
       source_name: "NPR",
@@ -194,8 +228,10 @@
       id: "news-9",
       title: "Türkiye, Riyad Bildirisinde İran Saldırılarını Kınadı Ancak ABD-İsrail Saldırılarına Değinilmedi",
       title_en: "Turkey Signs Riyadh Statement Condemning Iran but No Mention of US-Israel Strikes",
+      title_zh: "土耳其签署利雅得声明谴责伊朗，但未提及美以打击行动",
       summary: "Türkiye, 12 Arap ve İslam ülkesiyle birlikte Riyad'da imzalanan ortak bildiride İran'ın bölgesel saldırılarını kınadı. Ancak bildiri, ABD ve İsrail'in İran'a yönelik saldırılarından hiç söz etmedi. Türkiye ayrıca İncirlik Üssü'ne konuşlandırılan ek NATO Patriot sistemiyle güney sınırlarını güçlendirmeye devam ediyor.",
       summary_en: "Turkey joined 12 Arab and Muslim countries in signing a Riyadh statement condemning Iran's regional attacks. However, the statement made no mention of US and Israeli strikes on Iran. Turkey continues to strengthen its southern borders with an additional NATO Patriot system deployed to Incirlik Air Base.",
+      summary_zh: "土耳其与12个阿拉伯和伊斯兰国家共同签署利雅得声明，谴责伊朗的地区攻击行为。然而声明只字未提美国和以色列对伊朗的打击。土耳其继续通过在因吉尔利克空军基地部署额外的北约爱国者系统加强南部边境防御。",
       category: "Gündem",
       date: "2026-03-27",
       source_name: "Anadolu Ajansı",
@@ -211,8 +247,10 @@
       id: "news-10",
       title: "Mariah Carey 57 Yaşında: Pop Müziğin Kraliçesi Doğum Gününü Kutluyor",
       title_en: "Mariah Carey Turns 57: The Queen of Pop Celebrates Her Birthday",
+      title_zh: "玛丽亚·凯莉57岁：流行天后庆祝生日",
       summary: "Dünya genelinde 200 milyondan fazla albüm satan ve Billboard Hot 100 listesinde 19 bir numaralı şarkıyla Beatles'tan sonra ikinci sırada yer alan Mariah Carey, 57. yaşını kutluyor. Beş oktavlık ses aralığıyla müzik tarihine damgasını vuran sanatçı, yeni albüm çalışmalarının devam ettiğini duyurdu.",
       summary_en: "Mariah Carey, who has sold over 200 million albums worldwide and holds 19 number-one singles on the Billboard Hot 100 — second only to The Beatles — celebrates her 57th birthday. The artist with a five-octave vocal range announced that work on her new album continues.",
+      summary_zh: "全球唱片销量超过2亿张、在Billboard Hot 100榜上拥有19首冠军单曲（仅次于披头士）的玛丽亚·凯莉迎来57岁生日。这位拥有五个八度音域的艺术家宣布新专辑正在制作中。",
       category: "Magazin",
       date: "2026-03-27",
       source_name: "Parade",
@@ -318,7 +356,7 @@
     var toggle = document.getElementById("lang-toggle");
     if (!toggle) return;
     toggle.addEventListener("click", function () {
-      currentLang = currentLang === "tr" ? "en" : "tr";
+      currentLang = currentLang === "tr" ? "en" : currentLang === "en" ? "zh" : "tr";
       var opts = toggle.querySelectorAll(".lang-toggle__option");
       opts.forEach(function (opt) {
         if (opt.getAttribute("data-lang") === currentLang) {
@@ -327,18 +365,20 @@
           opt.classList.remove("lang-toggle__option--active");
         }
       });
-      document.documentElement.setAttribute("lang", currentLang);
+      document.documentElement.setAttribute("lang", currentLang === "zh" ? "zh-CN" : currentLang);
       route();
     });
   })();
 
   function getNewsTitle(news) {
     if (currentLang === "en" && news.title_en) return news.title_en;
+    if (currentLang === "zh" && news.title_zh) return news.title_zh;
     return news.title;
   }
 
   function getNewsSummary(news) {
     if (currentLang === "en" && news.summary_en) return news.summary_en;
+    if (currentLang === "zh" && news.summary_zh) return news.summary_zh;
     return news.summary;
   }
 
@@ -433,12 +473,13 @@
 
   /* ─── Format date ──────────────────────────────────────── */
   function formatDate(dateStr) {
-    var months = (currentLang === "en" ? EN : TR).months;
+    var months = (currentLang === "en" ? EN : currentLang === "zh" ? ZH : TR).months;
     var parts = dateStr.split("-");
     var day = parseInt(parts[2], 10);
     var month = months[parseInt(parts[1], 10) - 1];
     var year = parts[0];
     if (currentLang === "en") return month + " " + day + ", " + year;
+    if (currentLang === "zh") return year + "年" + month + day + "日";
     return day + " " + month + " " + year;
   }
 
@@ -1268,7 +1309,7 @@
   function route() {
     var hash = window.location.hash || "#/";
     window.scrollTo(0, 0);
-    document.title = currentLang === "en" ? "Ne Derdi? \u2014 History's Great Thinkers Comment on Today" : "Ne Derdi? \u2014 Tarihin B\u00fcy\u00fck D\u00fc\u015f\u00fcn\u00fcrleri G\u00fcn\u00fcm\u00fcz\u00fc Yorumluyor";
+    document.title = currentLang === "en" ? "Ne Derdi? \u2014 History's Great Thinkers Comment on Today" : currentLang === "zh" ? "他们会怎么说？\u2014 历史伟大思想家评论当今时事" : "Ne Derdi? \u2014 Tarihin B\u00fcy\u00fck D\u00fc\u015f\u00fcn\u00fcrleri G\u00fcn\u00fcm\u00fcz\u00fc Yorumluyor";
     if (hash === "#/filozoflar") {
       renderPhilosophersPage();
     } else if (hash === "#/psikologlar") {

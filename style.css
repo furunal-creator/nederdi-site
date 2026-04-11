@@ -1223,3 +1223,18 @@
   box-shadow: 0 0 0 1px rgba(255,255,255,0.06), 0 2px 8px rgba(0,0,0,0.3);
   background: #3d3930;
 }
+
+/* ─── Chinese (zh-CN) text adjustments ───────────────────── */
+:lang(zh-CN) .news-card__title,
+:lang(zh-CN) .news-card__summary,
+:lang(zh-CN) .hero__tagline,
+:lang(zh-CN) .featured-quote__text,
+:lang(zh-CN) .modal__interpretation {
+  word-break: break-all;
+  overflow-wrap: break-word;
+  line-height: 1.8;
+}
+
+:lang(zh-CN) .philosopher-thumb__name {
+  word-break: keep-all;
+}
