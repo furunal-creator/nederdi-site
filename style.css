@@ -994,6 +994,48 @@
   color: var(--color-primary);
 }
 
+.footer__contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  padding-bottom: var(--space-4);
+  font-size: 0.78rem;
+  color: var(--color-text-faint);
+  opacity: 0.7;
+}
+
+.footer__contact-label {
+  letter-spacing: 0.01em;
+}
+
+.footer__contact-link {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  border-bottom: 1px dotted transparent;
+  transition: color var(--transition-interactive), border-color var(--transition-interactive), opacity var(--transition-interactive);
+}
+
+.footer__contact-link:hover {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+.footer__contact-link--icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: none;
+  padding: 0.15rem;
+  opacity: 0.85;
+}
+
+.footer__contact-link--icon:hover {
+  border-bottom: none;
+  opacity: 1;
+}
+
 .footer__disclaimer {
   text-align: center;
   padding-top: var(--space-4);
